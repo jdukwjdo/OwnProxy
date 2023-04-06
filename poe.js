@@ -13,6 +13,9 @@ const requestBody = $request.body;
 const responseBody = $response.body;
 
 console.log(JSON.stringify($request));
+console.log(JSON.stirngify($request.headers));
+console.log($request.headers.indexOf('X-APOLLO-OPERATION-NAME'));
+console.log(JSON.stringify($request.headers['X-APOLLO-OPERATION-NAME']));
 console.log(JSON.stringify($response.body));
 
 $done();
