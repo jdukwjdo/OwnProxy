@@ -1,6 +1,7 @@
 const requestBody = $request.body;
 const responseBody = $response.body;
 
-$notify("命中请求:", JSON.stringify($request.body), "");
+console.log(JSON.stringify($request.body));
+console.log(JSON.stringify($response.body));
 
 $done();
