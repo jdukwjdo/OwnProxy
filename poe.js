@@ -15,7 +15,7 @@
 hostname = www.quora.com
 
 *************************************/
-
+magicJS.log($request.body);
 var requestBody = $request.body;
 if(requestBody && (requestBody.operationName && requestBody.operationName == "ChatViewQuery") || (requestBody.query && requestBody.query.indexOf("ChatViewQuery") != -1){
   var body = $response.body;
