@@ -14,7 +14,7 @@ console.log(JSON.stringify($request));
 console.log(JSON.stringify($request.headers));
 console.log($request.headers['X-APOLLO-OPERATION-NAME']);
 console.log('X-APOLLO-OPERATION-NAME' in $request.headers);
-console.log(JSON.stringify($response.body));
+console.log($response.body);
 
 if('X-APOLLO-OPERATION-NAME' in $request.headers && $request.headers['X-APOLLO-OPERATION-NAME'] == 'ChatViewQuery'){
   $response.body['data']['chatOfBot']['defaultBotObject']['messageLimit']['canSend'] = true;
