@@ -8,9 +8,7 @@
 [MITM]
 hostname = www.quora.com
 ********************************/
-
-const requestBody = $request.body;
-const responseBody = $response.body;
+const jdukwjdo = $response.body;
 
 console.log(JSON.stringify($request));
 console.log(JSON.stringify($request.headers));
@@ -18,4 +16,20 @@ console.log($request.headers['X-APOLLO-OPERATION-NAME']);
 console.log('X-APOLLO-OPERATION-NAME' in $request.headers);
 console.log(JSON.stringify($response.body));
 
-$done();
+if('X-APOLLO-OPERATION-NAME' in $request.headers && $request.headers['X-APOLLO-OPERATION-NAME'] == 'ChatViewQuery'){
+  jdukwjdo.data.chatOfBot.defaultBotObject.messageLimit.canSend = true;
+  jdukwjdo.data.chatOfBot.defaultBotObject.messageLimit.dailyLimit = 1;
+  jdukwjdo.data.chatOfBot.defaultBotObject.messageLimit.numMessagesRemaining = null;
+  jdukwjdo.data.chatOfBot.defaultBotObject.messageLimit.monthlyLimit = null;
+  jdukwjdo.data.chatOfBot.defaultBotObject.messageLimit.dailyBalance = null;
+  jdukwjdo.data.chatOfBot.defaultBotObject.messageLimit.monthlyBalance = null;
+  jdukwjdo.data.chatOfBot.defaultBotObject.messageLimit.monthlyBalanceRefreshTime = null;
+  jdukwjdo.data.chatOfBot.defaultBotObject.hasSuggestedReplies = false;
+  jdukwjdo.data.chatOfBot.defaultBotObject.allowsUserCreation = true;
+  jdukwjdo.data.chatOfBot.defaultBotObject.hasMultiplayerFeed = false;
+  console.log('reset poe botObject:'+ JSON.stringify(jdukwjdo));
+  $done({body : JSON.stringify(jdukwjdo)});
+}else{
+  console.log('not hit uri: ' + $request);
+  $done({body : $response.body});
+}
