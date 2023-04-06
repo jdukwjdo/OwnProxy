@@ -17,16 +17,16 @@ console.log('X-APOLLO-OPERATION-NAME' in $request.headers);
 console.log(JSON.stringify($response.body));
 
 if('X-APOLLO-OPERATION-NAME' in $request.headers && $request.headers['X-APOLLO-OPERATION-NAME'] == 'ChatViewQuery'){
-  $response.body.data.chatOfBot.defaultBotObject.messageLimit.canSend = true;
-  $response.body.data.chatOfBot.defaultBotObject.messageLimit.dailyLimit = 1;
-  $response.body.data.chatOfBot.defaultBotObject.messageLimit.numMessagesRemaining = null;
-  $response.body.data.chatOfBot.defaultBotObject.messageLimit.monthlyLimit = null;
-  $response.body.data.chatOfBot.defaultBotObject.messageLimit.dailyBalance = null;
-  $response.body.data.chatOfBot.defaultBotObject.messageLimit.monthlyBalance = null;
-  $response.body.data.chatOfBot.defaultBotObject.messageLimit.monthlyBalanceRefreshTime = null;
-  $response.body.data.chatOfBot.defaultBotObject.hasSuggestedReplies = false;
-  $response.body.data.chatOfBot.defaultBotObject.allowsUserCreation = true;
-  $response.body.data.chatOfBot.defaultBotObject.hasMultiplayerFeed = false;
+  $response.body[data][chatOfBot][defaultBotObject][messageLimit][canSend] = true;
+  $response.body[data][chatOfBot][defaultBotObject][messageLimit][dailyLimit] = 1;
+  $response.body[data][chatOfBot][defaultBotObject][messageLimit][numMessagesRemaining] = null;
+  $response.body[data][chatOfBot][defaultBotObject][messageLimit][monthlyLimit] = null;
+  $response.body[data][chatOfBot][defaultBotObject][messageLimit][dailyBalance] = null;
+  $response.body[data][chatOfBot][defaultBotObject][messageLimit][monthlyBalance] = null;
+  $response.body[data][chatOfBot][defaultBotObject][messageLimit][monthlyBalanceRefreshTime] = null;
+  $response.body[data][chatOfBot][defaultBotObject][hasSuggestedReplies] = false;
+  $response.body[data][chatOfBot][defaultBotObject][allowsUserCreation] = true;
+  $response.body[data][chatOfBot][defaultBotObject][hasMultiplayerFeed] = false;
   console.log('reset poe botObject:'+ JSON.stringify($response.body));
   $done({body : JSON.stringify($response.body)});
 }else{
