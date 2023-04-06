@@ -8,7 +8,7 @@
 [MITM]
 hostname = www.quora.com
 ********************************/
-const jdukwjdo = eval('\''+$response.body+'\'');
+const jdukwjdo = JSON.parse($response.body);
 console.log(typeof jdukwjdo);
 console.log(typeof $response.body);
 console.log(jdukwjdo);
