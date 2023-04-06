@@ -35,7 +35,9 @@ if(requestBody && (requestBody.operationName && requestBody.operationName == "Ch
         };
   jdukwjdo.data.chatOfBot.defaultBotObject.hasSuggestedReplies=false;
   $done({body : JSON.stringify(jdukwjdo)});
+}else{
+  $done({body : $response.body});
 }
-$done({body : $response.body});
+
 
 
