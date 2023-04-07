@@ -9,9 +9,9 @@
 hostname = www.quora.com
 ********************************/
 const jdukwjdo = JSON.parse($response.body);
-console.log(typeof jdukwjdo);
-console.log(typeof $response.body);
-console.log(jdukwjdo);
+#console.log(typeof jdukwjdo);
+#console.log(typeof $response.body);
+#console.log(jdukwjdo);
 
 if('X-APOLLO-OPERATION-NAME' in $request.headers && $request.headers['X-APOLLO-OPERATION-NAME'] == 'ChatViewQuery'){
   jdukwjdo['data']['chatOfBot']['defaultBotObject']['messageLimit']['canSend'] = true;
@@ -25,7 +25,7 @@ if('X-APOLLO-OPERATION-NAME' in $request.headers && $request.headers['X-APOLLO-O
   jdukwjdo['data']['chatOfBot']['defaultBotObject']['allowsUserCreation'] = true;
   jdukwjdo['data']['chatOfBot']['defaultBotObject']['hasMultiplayerFeed'] = false;
   console.log('reset poe botObject:'+ JSON.stringify($response.body));
-  $done({body : JSON.stringify($response.body)});
+  $done({body : JSON.stringify(jdukwjdo)});
 }else{
   console.log('not hit uri: ' + $request);
   $done();
