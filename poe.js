@@ -9,9 +9,8 @@
 hostname = www.quora.com
 ********************************/
 const jdukwjdo = JSON.parse($response.body);
-console.log(typeof jdukwjdo);
-console.log(typeof $response.body);
-console.log(jdukwjdo);
+console.log('原始响应体: type:' + typeof $response.body + '. info: '+ $response.body);
+console.log('转换后json对象：' +jdukwjdo);
 
 if('X-APOLLO-OPERATION-NAME' in $request.headers && $request.headers['X-APOLLO-OPERATION-NAME'] == 'ChatViewQuery'){
   jdukwjdo['data']['chatOfBot']['defaultBotObject']['messageLimit']['canSend'] = true;
