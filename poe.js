@@ -25,7 +25,7 @@ if('X-APOLLO-OPERATION-NAME' in $request.headers && $request.headers['X-APOLLO-O
   jdukwjdo['data']['chatOfBot']['defaultBotObject']['hasMultiplayerFeed'] = false;
   jdukwjdo['data']['chatOfBot']['defaultBotObject']['hasWelcomeTopics'] = false;
   console.log('reset poe botObject:'+ JSON.stringify(jdukwjdo));
-  $done({body : JSON.stringify(jdukwjdo)});
+  $done({body : JSON.stringify(jdukwjdo, null, 2)});
 }else{
   console.log('not hit uri: ' + $request);
   $done();
