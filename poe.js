@@ -9,7 +9,7 @@
 hostname = www.quora.com
 ********************************/
 const jdukwjdo = JSON.parse($response.body);
-console.log('请求信息：' + JSON.stringify($request));
+console.log('请求信息：' + JSON.stringify($request, null, 2));
 console.log('原始响应体: type:' + typeof $response.body + '. info: '+ $response.body);
 console.log('转换后json对象：' +JSON.stringify(jdukwjdo, null, 2));
 
